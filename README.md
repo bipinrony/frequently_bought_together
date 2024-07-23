@@ -1,0 +1,2 @@
+# frequently_bought_together
+Mit dem Frequently Bought Together Plugin können Ihre Kunden, wie sie es auch von anderen großen Marktplätzen gewohnt sind, gleich passende Produkte mit einem Klick in den Warenkorb legen. Dadurch erhöhen Sie in Ihrem Onlineshop ohne viel Aufwand Ihren Warenkorb-Wert.

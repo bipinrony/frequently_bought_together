@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jtlshopplugin>
+    <Name>Frequently Bought Together</Name>
+    <Description>Mit dem Frequently Bought Together Plugin k�nnen Ihre Kunden, wie sie es auch von anderen gro�en Marktpl�tzen gewohnt sind, gleich passende Produkte mit einem Klick in den Warenkorb legen. Dadurch erh�hen Sie in Ihrem Onlineshop ohne viel Aufwand Ihren Warenkorb-Wert.</Description>
+    <Author>E-Commerce Zentrum</Author>
+    <URL>https://ecommerce-zentrum.de</URL>
+    <XMLVersion>100</XMLVersion>
+    <MinShopVersion>500</MinShopVersion>
+    <Icon>preview.png</Icon>
+    <PluginID>frequently_bought_together</PluginID>
+    <CreateDate>2022-04-04</CreateDate>
+    <Version>2.0.1</Version>
+    <ExsID>7319108d-ec2c-4a4a-8af5-c1d1676446fc</ExsID>
+    <Install>
+        <Hooks>
+            <Hook id="1">1_fbt_widget.php</Hook>
+            <Hook id="140">140_fbt_widget.php</Hook>
+        </Hooks>
+        <FrontendLink>
+            <Link>
+                <Filename>response.php</Filename>
+                <Name>FTB Link</Name>
+                <Template>script.tpl</Template>
+                <VisibleAfterLogin>N</VisibleAfterLogin>
+                <PrintButton>N</PrintButton>
+                <NoFollow>N</NoFollow>
+                <Identifier>fbtResponse</Identifier>
+                <SSL>2</SSL>
+                <LinkLanguage iso="GER">
+                    <Seo>fbtResponse</Seo>
+                    <Name>fbtResponse</Name>
+                    <Title>FBT Response Link</Title>
+                    <MetaTitle>FTB Response Link</MetaTitle>
+                    <MetaKeywords>FBT Response Link</MetaKeywords>
+                    <MetaDescription>FBT Response Link.</MetaDescription>
+                </LinkLanguage>
+            </Link>
+        </FrontendLink>
+        <Adminmenu>
+            <Customlink sort="10">
+                <Name>Cache leeren</Name>
+                <Filename>fbt_clear_cache.php</Filename>
+            </Customlink>
+            
+            <Customlink sort="20">
+                <Name>Statistiken</Name>
+            </Customlink>
+
+            <Customlink sort="30">
+                <Name>Support</Name>
+                <Filename>fbt_support.php</Filename>
+            </Customlink>
+        
+
+            <Settingslink sort="0">
+                <Name>Einstellungen</Name>
+                <Setting type="selectbox" initialValue="N" sort="1" conf="Y">
+                    <Name>Status</Name>
+                    <Description>Mit "aktiv" aktivieren Sie das Plugin, jetzt wird es im Shop angezeigt. Mit "inaktiv" deaktivieren Sie es.</Description>
+                    <ValueName>fbt_enable</ValueName>
+                    <SelectboxOptions>
+                    <Option value="N" sort="1">Inaktiv</Option>
+                    <Option value="Y" sort="2">Aktiv</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="N" sort="1" conf="Y">
+                    <Name>Nur anzeigen, bei realen K�ufen</Name>
+                    <Description> Hier entscheiden Sie, ob das Plugin immer im Shop angezeigt werden soll, oder nur, wenn es tats�chlich reale Verk�ufe mit anderen Produkten gegeben hat. </Description>
+                    <ValueName>fbt_show_only_if_products</ValueName>
+                    <SelectboxOptions>
+                    <Option value="N" sort="1">Nein</Option>
+                    <Option value="Y" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="text" initialValue="Wird oft zusammen gekauft" sort="2" conf="Y">
+                    <Name>Titel</Name>
+                    <Description>Hier k�nnen Sie den Titel �ndern. z.B. "Wird oft zusammen gekauft"</Description>
+                    <ValueName>fbt_title</ValueName>
+                    <Value>Wird oft zusammen gekauft</Value>
+                </Setting>
+                <Setting type="text" initialValue="#103EE6" sort="3" conf="Y">
+                    <Name>Button Farbe</Name>
+                    <Description>Hier k�nnen Sie die Farbe des Buttons �ndern (z.B. #103EE6)</Description>
+                    <ValueName>fbt_button_color</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="Alle drei in den Warenkorb" sort="4" conf="Y">
+                    <Name>Button Text</Name>
+                    <Description>Hier k�nnen Sie den Text des Buttons �ndern (z.B. Wird oft zusammen gekauft)</Description>
+                    <ValueName>fbt_button_text</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="10px" sort="5" conf="Y">
+                    <Name>Button Radius</Name>
+                    <Description>Hier k�nnen Sie den Eckenradius des Buttons �ndern (z.B. 10px)</Description>
+                    <ValueName>fbt_button_radius</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="" sort="7" conf="Y">
+                    <Name>1. Platzhalter Produkt</Name>
+                    <Description>Hier legen Sie ein vorausgew�hltes Produkt fest. F�r den Fall, dass noch kein Produkte mit dem angezeigten zusammen gekauft wurde.</Description>
+                    <ValueName>fbt_default_product_1</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="" sort="8" conf="Y">
+                    <Name>2. Platzhalter Produkt</Name>
+                    <Description>Hier legen Sie das zweite vorausgew�hlte Produkt fest. F�r den Fall, dass noch kein Produkte mit dem angezeigten zusammen gekauft wurde.</Description>
+                    <ValueName>fbt_default_product_2</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="3px" sort="9" conf="Y">
+                    <Name>Rahmenbreite</Name>
+                    <Description> Hier legen Sie die breite des Rahmens f�r das Widget fest. (z.B. 3px)</Description>
+                    <ValueName>fbt_border_width</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="#013A85" sort="10" conf="Y">
+                    <Name>Rahmenfarbe</Name>
+                    <Description>Hier legen Sie die Rahmenfarbe f�r das Widget fest. (z.B. #013A85)</Description>
+                    <ValueName>fbt_border_color</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="N" sort="1" conf="Y">
+                    <Name>Widget automatisch installieren</Name>
+                    <Description>Sie k�nnen das Widget im Frontend an beliebiger Stelle in Ihrem Design per Shortcode selbst installieren oder einfach per "aktivieren" das Widget an vorgegebener Stelle einf�gen lassen.</Description>
+                    <ValueName>fbt_show_widget_automatically</ValueName>
+                    <SelectboxOptions>
+                        <Option value="N" sort="1">Nein</Option>
+                        <Option value="Y" sort="2">Ja</Option>
+                    </SelectboxOptions>
+                </Setting>
+            </Settingslink>
+        </Adminmenu>
+        <CSS>
+            <file>
+                <name>frequently_bought_together.css</name>
+                <priority>0</priority>
+            </file>
+        </CSS>
+        <JS>
+            <file>
+                <name>frequently_bought_together.js</name>
+                <priority>5</priority>
+                <position>body</position>
+            </file>
+        </JS>
+    </Install>
+</jtlshopplugin>
